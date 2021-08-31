@@ -12,7 +12,7 @@
  * botões play/stop (para que o elemento se revele lentamente)
  */
  #controles ul {
-
+  transition: all 1s ease;
  }
 
 /*
@@ -24,17 +24,88 @@
  *   - atacando: animal dá um salto e cresce, com uma borda vermelha
  */
 .com-fome {
-
+  border: 20px solid orange;
+  animation:piscando 3s;
 }
+
+@keyframes piscando {
+  0% {
+    opacity:0;
+  }
+  50% {
+    opacity:1;
+  }
+  100% {
+    opacity:0;
+  }
+}
+
+
 
 .satisfeito {
+  border: 20px solid green;
+  animation:roda-roda-jequiti 4s;
 
 }
+
+@keyframes roda-roda-jequiti {
+  0% {
+    transform: rotate(-90deg);
+  }
+  40% {
+    transform: rotate(90deg);
+  }
+  45% {
+    transform: rotate(-90deg);
+  }
+  95% {
+    transform: rotate(90deg);
+  }
+}
+
 
 .com-raiva {
+  box-shadow: 0 0 0 0 red;
+  transform: scale(1);
+  animation:in-rage 2s infinite;
+}
+
+@keyframes in-rage {
+  0% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 red;
+	}
+
+	70% {
+		transform: scale(1);
+		box-shadow: 0 0 0 10px orange;
+	}
+
+	100% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 orange;
+	}
+}
+
+
+
+
+.atacando {
+  border: 20px solid red;
+  animation: shake 0.5s infinite;
 
 }
 
-.atacando {
-
+@keyframes tremendo-de-raiva {
+  0% { transform: translate(8px, 8px) rotate(0deg); }
+  10% { transform: translate(-8px, -9px) rotate(-10deg); }
+  20% { transform: translate(-16px, 0px) rotate(10deg); }
+  30% { transform: translate(16px, 9px) rotate(0deg); }
+  40% { transform: translate(16px, -8px) rotate(10deg); }
+  50% { transform: translate(-8px, 9px) rotate(-10deg); }
+  60% { transform: translate(-16px, 8px) rotate(0deg); }
+  70% { transform: translate(16px, 8px) rotate(-10deg); }
+  80% { transform: translate(-8px, -8px) rotate(10deg); }
+  90% { transform: translate(8px, 8px) rotate(0deg); }
+  100% { transform: translate(16px, -9px) rotate(-10deg); }
 }
